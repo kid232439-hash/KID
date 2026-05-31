@@ -1,0 +1,18 @@
+services:
+  jaguar-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      ENVIRONMENT: production
+      DATABASE_URL: sqlite:////data/jaguar.db
+      JWT_SECRET: replace-with-a-long-random-secret
+      ADMIN_EMAIL: admin@jaguar.local
+      ADMIN_PASSWORD: ChangeMeNow!2026
+      FREERADIUS_SHARED_SECRET: change-radius-secret
+      PAYMENT_WEBHOOK_SECRET: change-payment-secret
+      SATELLITE_API_KEY: change-satellite-key
+    volumes:
+      - jaguar-data:/data
+volumes:
+  jaguar-data:
