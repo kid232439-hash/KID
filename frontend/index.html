@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ff7900" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <title>JAGUAR TECHNOLOGIES ISP Platform</title>
+  </head>
+  <body>
+    <header class="hero">
+      <nav>
+        <div class="brand"><span class="mark">J</span> JAGUAR TECHNOLOGIES</div>
+        <a href="/docs" class="docs">API Docs</a>
+      </nav>
+      <section class="hero-grid">
+        <div>
+          <p class="eyebrow">FreeRADIUS + billing + security + satellite ready</p>
+          <h1>Orange-grade Wi-Fi billing control for real ISPs.</h1>
+          <p class="lead">
+            Manage subscribers, plans, RADIUS authorization, global payment webhooks, and
+            satellite terminal links from one admin-controlled platform.
+          </p>
+          <button id="install" hidden>Install app</button>
+        </div>
+        <form id="login-card" class="card">
+          <h2>Admin sign in</h2>
+          <label>Email <input id="email" type="email" value="admin@jaguar.local" required /></label>
+          <label>Password <input id="password" type="password" value="ChangeMeNow!2026" required /></label>
+          <label>MFA code <input id="totp" placeholder="Only if enabled" /></label>
+          <button type="submit">Enter secure console</button>
+          <p id="login-status" role="status"></p>
+        </form>
+      </section>
+    </header>
+
+    <main class="console">
+      <section class="panel">
+        <h2>Operations dashboard</h2>
+        <div id="metrics" class="metrics"></div>
+      </section>
+      <section class="panel split">
+        <div>
+          <h2>Subscriber onboarding</h2>
+          <form id="subscriber-form" class="stack">
+            <input name="account_no" placeholder="Account number" required />
+            <input name="name" placeholder="Customer name" required />
+            <input name="phone" placeholder="Phone" required />
+            <input name="email" type="email" placeholder="Email" required />
+            <input name="radius_username" placeholder="RADIUS username" required />
+            <input name="radius_password" type="password" placeholder="RADIUS password" required />
+            <select name="plan_id" id="plans"></select>
+            <input name="satellite_terminal_id" placeholder="Optional satellite terminal ID" />
+            <button type="submit">Create subscriber</button>
+          </form>
+        </div>
+        <div>
+          <h2>Live subscribers</h2>
+          <div id="subscribers" class="list"></div>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Security center</h2>
+        <p>Security, user creation, plan changes, RADIUS secrets, and satellite linking are admin-controlled.</p>
+        <div id="security-events" class="list"></div>
+      </section>
+    </main>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>

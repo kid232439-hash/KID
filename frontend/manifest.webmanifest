@@ -1,0 +1,12 @@
+{
+  "name": "JAGUAR TECHNOLOGIES ISP Platform",
+  "short_name": "JAGUAR ISP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14110f",
+  "theme_color": "#ff7900",
+  "description": "Admin-controlled Wi-Fi billing, RADIUS, payment, security, and satellite platform for ISPs.",
+  "icons": [
+    { "src": "/assets/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
